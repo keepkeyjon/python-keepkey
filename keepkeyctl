@@ -536,15 +536,26 @@ def handle_message(message):
     print('received message: ' + str(message))
     if message['command'] == 'init':
         client.init_device()
-    if message['command'] == 'get_features':
+    elif message['command'] == 'get_features':
         resp = MessageToJson(client.features)
         emit('message', resp)
-    if message['command'] == 'ping':
+    elif message['command'] == 'ping':
         client.init_device()
         sig = client.sign_message('Bitcoin', [], message['msg'])
         resp = { 'address' : sig.address,
                  'signature' : sig.signature }
-        send(resp, json=True)
+        emit('message', resp)
+    elif message['command'] == 'get_address':
+        address_n = client.expand_path(message['address_n'])
+        typemap = { 'address': types.SPENDADDRESS,
+                    'segwit': types.SPENDWITNESS,
+                    'p2shsegwit': types.SPENDP2SHWITNESS }
+        script_type = typemap[message['script_type']]
+        resp = client.get_address(message['coin'], address_n,
+                                  bool(message['show_display']),
+                                  script_type=script_type)
+        resp = { 'address' : resp }
+        emit('message', resp)
 
 
 @socketio.on('json')
