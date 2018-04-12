@@ -512,7 +512,7 @@ def list_usb():
 
 
 from flask import Flask, render_template
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO, send, emit
 
 flask_app = Flask(__name__)
 #flask_app.config['SECRET_KEY'] = 'secret!'
@@ -532,11 +532,19 @@ def test_disconnect():
 
 @socketio.on('message')
 def handle_message(message):
+    from google.protobuf.json_format import MessageToJson
     print('received message: ' + str(message))
+    if message['command'] == 'init':
+        client.init_device()
+    if message['command'] == 'get_features':
+        resp = MessageToJson(client.features)
+        emit('message', resp)
     if message['command'] == 'ping':
         client.init_device()
-        #print('result: ' + str(client.ping(message['msg'], False, False, False)))
-        print('result: ' + str(client.sign_message('Bitcoin', [], message['msg'])))
+        sig = client.sign_message('Bitcoin', [], message['msg'])
+        resp = { 'address' : sig.address,
+                 'signature' : sig.signature }
+        send(resp, json=True)
 
 
 @socketio.on('json')
