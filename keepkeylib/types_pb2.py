@@ -22,10 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='types.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x0btypes.proto\x1a google/protobuf/descriptor.proto\x1a\x0e\x65xchange.proto\"\x80\x01\n\nHDNodeType\x12\r\n\x05\x64\x65pth\x18\x01 \x02(\r\x12\x13\n\x0b\x66ingerprint\x18\x02 \x02(\r\x12\x11\n\tchild_num\x18\x03 \x02(\r\x12\x12\n\nchain_code\x18\x04 \x02(\x0c\x12\x13\n\x0bprivate_key\x18\x05 \x01(\x0c\x12\x12\n\npublic_key\x18\x06 \x01(\x0c\">\n\x0eHDNodePathType\x12\x19\n\x04node\x18\x01 \x02(\x0b\x32\x0b.HDNodeType\x12\x11\n\taddress_n\x18\x02 \x03(\r\"\x89\x02\n\x08\x43oinType\x12\x11\n\tcoin_name\x18\x01 \x01(\t\x12\x15\n\rcoin_shortcut\x18\x02 \x01(\t\x12\x17\n\x0c\x61\x64\x64ress_type\x18\x03 \x01(\r:\x01\x30\x12\x11\n\tmaxfee_kb\x18\x04 \x01(\x04\x12\x1c\n\x11\x61\x64\x64ress_type_p2sh\x18\x05 \x01(\r:\x01\x35\x12\x1e\n\x13\x61\x64\x64ress_type_p2wpkh\x18\x06 \x01(\r:\x01\x36\x12\x1e\n\x12\x61\x64\x64ress_type_p2wsh\x18\x07 \x01(\r:\x02\x31\x30\x12\x1d\n\x15signed_message_header\x18\x08 \x01(\t\x12\x1a\n\x12\x62ip44_account_path\x18\t \x01(\r\x12\x0e\n\x06\x66orkid\x18\x0c \x01(\r\"[\n\x18MultisigRedeemScriptType\x12 \n\x07pubkeys\x18\x01 \x03(\x0b\x32\x0f.HDNodePathType\x12\x12\n\nsignatures\x18\x02 \x03(\x0c\x12\t\n\x01m\x18\x03 \x01(\r\"\xeb\x01\n\x0bTxInputType\x12\x11\n\taddress_n\x18\x01 \x03(\r\x12\x11\n\tprev_hash\x18\x02 \x02(\x0c\x12\x12\n\nprev_index\x18\x03 \x02(\r\x12\x12\n\nscript_sig\x18\x04 \x01(\x0c\x12\x1c\n\x08sequence\x18\x05 \x01(\r:\n4294967295\x12\x33\n\x0bscript_type\x18\x06 \x01(\x0e\x32\x10.InputScriptType:\x0cSPENDADDRESS\x12+\n\x08multisig\x18\x07 \x01(\x0b\x32\x19.MultisigRedeemScriptType\x12\x0e\n\x06\x61mount\x18\x08 \x01(\x04\"\xff\x01\n\x0cTxOutputType\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x11\n\taddress_n\x18\x02 \x03(\r\x12\x0e\n\x06\x61mount\x18\x03 \x02(\x04\x12&\n\x0bscript_type\x18\x04 \x02(\x0e\x32\x11.OutputScriptType\x12+\n\x08multisig\x18\x05 \x01(\x0b\x32\x19.MultisigRedeemScriptType\x12\x16\n\x0eop_return_data\x18\x06 \x01(\x0c\x12(\n\x0c\x61\x64\x64ress_type\x18\x07 \x01(\x0e\x32\x12.OutputAddressType\x12$\n\rexchange_type\x18\x08 \x01(\x0b\x32\r.ExchangeType\"8\n\x0fTxOutputBinType\x12\x0e\n\x06\x61mount\x18\x01 \x02(\x04\x12\x15\n\rscript_pubkey\x18\x02 \x02(\x0c\"\xef\x01\n\x0fTransactionType\x12\x0f\n\x07version\x18\x01 \x01(\r\x12\x1c\n\x06inputs\x18\x02 \x03(\x0b\x32\x0c.TxInputType\x12%\n\x0b\x62in_outputs\x18\x03 \x03(\x0b\x32\x10.TxOutputBinType\x12\x1e\n\x07outputs\x18\x05 \x03(\x0b\x32\r.TxOutputType\x12\x11\n\tlock_time\x18\x04 \x01(\r\x12\x12\n\ninputs_cnt\x18\x06 \x01(\r\x12\x13\n\x0boutputs_cnt\x18\x07 \x01(\r\x12\x12\n\nextra_data\x18\x08 \x01(\x0c\x12\x16\n\x0e\x65xtra_data_len\x18\t \x01(\r\"%\n\x12RawTransactionType\x12\x0f\n\x07payload\x18\x01 \x02(\x0c\"q\n\x14TxRequestDetailsType\x12\x15\n\rrequest_index\x18\x01 \x01(\r\x12\x0f\n\x07tx_hash\x18\x02 \x01(\x0c\x12\x16\n\x0e\x65xtra_data_len\x18\x03 \x01(\r\x12\x19\n\x11\x65xtra_data_offset\x18\x04 \x01(\r\"\\\n\x17TxRequestSerializedType\x12\x17\n\x0fsignature_index\x18\x01 \x01(\r\x12\x11\n\tsignature\x18\x02 \x01(\x0c\x12\x15\n\rserialized_tx\x18\x03 \x01(\x0c\"g\n\x0cIdentityType\x12\r\n\x05proto\x18\x01 \x01(\t\x12\x0c\n\x04user\x18\x02 \x01(\t\x12\x0c\n\x04host\x18\x03 \x01(\t\x12\x0c\n\x04port\x18\x04 \x01(\t\x12\x0c\n\x04path\x18\x05 \x01(\t\x12\x10\n\x05index\x18\x06 \x01(\r:\x01\x30\"2\n\nPolicyType\x12\x13\n\x0bpolicy_name\x18\x01 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\"\xa8\x01\n\x0c\x45xchangeType\x12\x39\n\x18signed_exchange_response\x18\x01 \x01(\x0b\x32\x17.SignedExchangeResponse\x12%\n\x14withdrawal_coin_name\x18\x02 \x01(\t:\x07\x42itcoin\x12\x1c\n\x14withdrawal_address_n\x18\x03 \x03(\r\x12\x18\n\x10return_address_n\x18\x04 \x03(\r*\xcd\x02\n\x0b\x46\x61ilureType\x12\x1d\n\x19\x46\x61ilure_UnexpectedMessage\x10\x01\x12\x1a\n\x16\x46\x61ilure_ButtonExpected\x10\x02\x12\x17\n\x13\x46\x61ilure_SyntaxError\x10\x03\x12\x1b\n\x17\x46\x61ilure_ActionCancelled\x10\x04\x12\x17\n\x13\x46\x61ilure_PinExpected\x10\x05\x12\x18\n\x14\x46\x61ilure_PinCancelled\x10\x06\x12\x16\n\x12\x46\x61ilure_PinInvalid\x10\x07\x12\x1c\n\x18\x46\x61ilure_InvalidSignature\x10\x08\x12\x11\n\rFailure_Other\x10\t\x12\x1a\n\x16\x46\x61ilure_NotEnoughFunds\x10\n\x12\x1a\n\x16\x46\x61ilure_NotInitialized\x10\x0b\x12\x19\n\x15\x46\x61ilure_FirmwareError\x10\x63*\x87\x01\n\x10OutputScriptType\x12\x10\n\x0cPAYTOADDRESS\x10\x00\x12\x13\n\x0fPAYTOSCRIPTHASH\x10\x01\x12\x11\n\rPAYTOMULTISIG\x10\x02\x12\x11\n\rPAYTOOPRETURN\x10\x03\x12\x10\n\x0cPAYTOWITNESS\x10\x04\x12\x14\n\x10PAYTOP2SHWITNESS\x10\x05*l\n\x0fInputScriptType\x12\x10\n\x0cSPENDADDRESS\x10\x00\x12\x11\n\rSPENDMULTISIG\x10\x01\x12\x0c\n\x08\x45XTERNAL\x10\x02\x12\x10\n\x0cSPENDWITNESS\x10\x03\x12\x14\n\x10SPENDP2SHWITNESS\x10\x04*U\n\x0bRequestType\x12\x0b\n\x07TXINPUT\x10\x00\x12\x0c\n\x08TXOUTPUT\x10\x01\x12\n\n\x06TXMETA\x10\x02\x12\x0e\n\nTXFINISHED\x10\x03\x12\x0f\n\x0bTXEXTRADATA\x10\x04*F\n\x11OutputAddressType\x12\t\n\x05SPEND\x10\x00\x12\x0c\n\x08TRANSFER\x10\x01\x12\n\n\x06\x43HANGE\x10\x02\x12\x0c\n\x08\x45XCHANGE\x10\x03*\xec\x07\n\x11\x42uttonRequestType\x12\x17\n\x13\x42uttonRequest_Other\x10\x01\x12\"\n\x1e\x42uttonRequest_FeeOverThreshold\x10\x02\x12\x1f\n\x1b\x42uttonRequest_ConfirmOutput\x10\x03\x12\x1d\n\x19\x42uttonRequest_ResetDevice\x10\x04\x12\x1d\n\x19\x42uttonRequest_ConfirmWord\x10\x05\x12\x1c\n\x18\x42uttonRequest_WipeDevice\x10\x06\x12\x1d\n\x19\x42uttonRequest_ProtectCall\x10\x07\x12\x18\n\x14\x42uttonRequest_SignTx\x10\x08\x12\x1f\n\x1b\x42uttonRequest_FirmwareCheck\x10\t\x12\x19\n\x15\x42uttonRequest_Address\x10\n\x12\x1f\n\x1b\x42uttonRequest_FirmwareErase\x10\x0b\x12*\n&ButtonRequest_ConfirmTransferToAccount\x10\x0c\x12+\n\'ButtonRequest_ConfirmTransferToNodePath\x10\r\x12\x1d\n\x19\x42uttonRequest_ChangeLabel\x10\x0e\x12 \n\x1c\x42uttonRequest_ChangeLanguage\x10\x0f\x12\"\n\x1e\x42uttonRequest_EnablePassphrase\x10\x10\x12#\n\x1f\x42uttonRequest_DisablePassphrase\x10\x11\x12\'\n#ButtonRequest_EncryptAndSignMessage\x10\x12\x12 \n\x1c\x42uttonRequest_EncryptMessage\x10\x13\x12\"\n\x1e\x42uttonRequest_ImportPrivateKey\x10\x14\x12(\n$ButtonRequest_ImportRecoverySentence\x10\x15\x12\x1e\n\x1a\x42uttonRequest_SignIdentity\x10\x16\x12\x16\n\x12\x42uttonRequest_Ping\x10\x17\x12\x1b\n\x17\x42uttonRequest_RemovePin\x10\x18\x12\x1b\n\x17\x42uttonRequest_ChangePin\x10\x19\x12\x1b\n\x17\x42uttonRequest_CreatePin\x10\x1a\x12\x1c\n\x18\x42uttonRequest_GetEntropy\x10\x1b\x12\x1d\n\x19\x42uttonRequest_SignMessage\x10\x1c\x12\x1f\n\x1b\x42uttonRequest_ApplyPolicies\x10\x1d\x12\x1e\n\x1a\x42uttonRequest_SignExchange\x10\x1e*\x7f\n\x14PinMatrixRequestType\x12 \n\x1cPinMatrixRequestType_Current\x10\x01\x12!\n\x1dPinMatrixRequestType_NewFirst\x10\x02\x12\"\n\x1ePinMatrixRequestType_NewSecond\x10\x03:4\n\x07wire_in\x12!.google.protobuf.EnumValueOptions\x18\xd2\x86\x03 \x01(\x08:5\n\x08wire_out\x12!.google.protobuf.EnumValueOptions\x18\xd3\x86\x03 \x01(\x08::\n\rwire_debug_in\x12!.google.protobuf.EnumValueOptions\x18\xd4\x86\x03 \x01(\x08:;\n\x0ewire_debug_out\x12!.google.protobuf.EnumValueOptions\x18\xd5\x86\x03 \x01(\x08\x42)\n\x1a\x63om.keepkey.deviceprotocolB\x0bKeepKeyType')
+  serialized_pb=_b('\n\x0btypes.proto\x1a google/protobuf/descriptor.proto\x1a\x0e\x65xchange.proto\"\x80\x01\n\nHDNodeType\x12\r\n\x05\x64\x65pth\x18\x01 \x02(\r\x12\x13\n\x0b\x66ingerprint\x18\x02 \x02(\r\x12\x11\n\tchild_num\x18\x03 \x02(\r\x12\x12\n\nchain_code\x18\x04 \x02(\x0c\x12\x13\n\x0bprivate_key\x18\x05 \x01(\x0c\x12\x12\n\npublic_key\x18\x06 \x01(\x0c\">\n\x0eHDNodePathType\x12\x19\n\x04node\x18\x01 \x02(\x0b\x32\x0b.HDNodeType\x12\x11\n\taddress_n\x18\x02 \x03(\r\"\xc8\x02\n\x08\x43oinType\x12\x11\n\tcoin_name\x18\x01 \x01(\t\x12\x15\n\rcoin_shortcut\x18\x02 \x01(\t\x12\x17\n\x0c\x61\x64\x64ress_type\x18\x03 \x01(\r:\x01\x30\x12\x11\n\tmaxfee_kb\x18\x04 \x01(\x04\x12\x1c\n\x11\x61\x64\x64ress_type_p2sh\x18\x05 \x01(\r:\x01\x35\x12\x1e\n\x13\x61\x64\x64ress_type_p2wpkh\x18\x06 \x01(\r:\x01\x36\x12\x1e\n\x12\x61\x64\x64ress_type_p2wsh\x18\x07 \x01(\r:\x02\x31\x30\x12\x1d\n\x15signed_message_header\x18\x08 \x01(\t\x12\x1a\n\x12\x62ip44_account_path\x18\t \x01(\r\x12\x0e\n\x06\x66orkid\x18\x0c \x01(\r\x12\x10\n\x08\x64\x65\x63imals\x18\r \x01(\r\x12\x18\n\x10\x63ontract_address\x18\x0e \x01(\x0c\x12\x11\n\tgas_limit\x18\x0f \x01(\x0c\"[\n\x18MultisigRedeemScriptType\x12 \n\x07pubkeys\x18\x01 \x03(\x0b\x32\x0f.HDNodePathType\x12\x12\n\nsignatures\x18\x02 \x03(\x0c\x12\t\n\x01m\x18\x03 \x01(\r\"\xeb\x01\n\x0bTxInputType\x12\x11\n\taddress_n\x18\x01 \x03(\r\x12\x11\n\tprev_hash\x18\x02 \x02(\x0c\x12\x12\n\nprev_index\x18\x03 \x02(\r\x12\x12\n\nscript_sig\x18\x04 \x01(\x0c\x12\x1c\n\x08sequence\x18\x05 \x01(\r:\n4294967295\x12\x33\n\x0bscript_type\x18\x06 \x01(\x0e\x32\x10.InputScriptType:\x0cSPENDADDRESS\x12+\n\x08multisig\x18\x07 \x01(\x0b\x32\x19.MultisigRedeemScriptType\x12\x0e\n\x06\x61mount\x18\x08 \x01(\x04\"\xff\x01\n\x0cTxOutputType\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x11\n\taddress_n\x18\x02 \x03(\r\x12\x0e\n\x06\x61mount\x18\x03 \x02(\x04\x12&\n\x0bscript_type\x18\x04 \x02(\x0e\x32\x11.OutputScriptType\x12+\n\x08multisig\x18\x05 \x01(\x0b\x32\x19.MultisigRedeemScriptType\x12\x16\n\x0eop_return_data\x18\x06 \x01(\x0c\x12(\n\x0c\x61\x64\x64ress_type\x18\x07 \x01(\x0e\x32\x12.OutputAddressType\x12$\n\rexchange_type\x18\x08 \x01(\x0b\x32\r.ExchangeType\"8\n\x0fTxOutputBinType\x12\x0e\n\x06\x61mount\x18\x01 \x02(\x04\x12\x15\n\rscript_pubkey\x18\x02 \x02(\x0c\"\xef\x01\n\x0fTransactionType\x12\x0f\n\x07version\x18\x01 \x01(\r\x12\x1c\n\x06inputs\x18\x02 \x03(\x0b\x32\x0c.TxInputType\x12%\n\x0b\x62in_outputs\x18\x03 \x03(\x0b\x32\x10.TxOutputBinType\x12\x1e\n\x07outputs\x18\x05 \x03(\x0b\x32\r.TxOutputType\x12\x11\n\tlock_time\x18\x04 \x01(\r\x12\x12\n\ninputs_cnt\x18\x06 \x01(\r\x12\x13\n\x0boutputs_cnt\x18\x07 \x01(\r\x12\x12\n\nextra_data\x18\x08 \x01(\x0c\x12\x16\n\x0e\x65xtra_data_len\x18\t \x01(\r\"%\n\x12RawTransactionType\x12\x0f\n\x07payload\x18\x01 \x02(\x0c\"q\n\x14TxRequestDetailsType\x12\x15\n\rrequest_index\x18\x01 \x01(\r\x12\x0f\n\x07tx_hash\x18\x02 \x01(\x0c\x12\x16\n\x0e\x65xtra_data_len\x18\x03 \x01(\r\x12\x19\n\x11\x65xtra_data_offset\x18\x04 \x01(\r\"\\\n\x17TxRequestSerializedType\x12\x17\n\x0fsignature_index\x18\x01 \x01(\r\x12\x11\n\tsignature\x18\x02 \x01(\x0c\x12\x15\n\rserialized_tx\x18\x03 \x01(\x0c\"g\n\x0cIdentityType\x12\r\n\x05proto\x18\x01 \x01(\t\x12\x0c\n\x04user\x18\x02 \x01(\t\x12\x0c\n\x04host\x18\x03 \x01(\t\x12\x0c\n\x04port\x18\x04 \x01(\t\x12\x0c\n\x04path\x18\x05 \x01(\t\x12\x10\n\x05index\x18\x06 \x01(\r:\x01\x30\"2\n\nPolicyType\x12\x13\n\x0bpolicy_name\x18\x01 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\"\xa8\x01\n\x0c\x45xchangeType\x12\x39\n\x18signed_exchange_response\x18\x01 \x01(\x0b\x32\x17.SignedExchangeResponse\x12%\n\x14withdrawal_coin_name\x18\x02 \x01(\t:\x07\x42itcoin\x12\x1c\n\x14withdrawal_address_n\x18\x03 \x03(\r\x12\x18\n\x10return_address_n\x18\x04 \x03(\r*\xcd\x02\n\x0b\x46\x61ilureType\x12\x1d\n\x19\x46\x61ilure_UnexpectedMessage\x10\x01\x12\x1a\n\x16\x46\x61ilure_ButtonExpected\x10\x02\x12\x17\n\x13\x46\x61ilure_SyntaxError\x10\x03\x12\x1b\n\x17\x46\x61ilure_ActionCancelled\x10\x04\x12\x17\n\x13\x46\x61ilure_PinExpected\x10\x05\x12\x18\n\x14\x46\x61ilure_PinCancelled\x10\x06\x12\x16\n\x12\x46\x61ilure_PinInvalid\x10\x07\x12\x1c\n\x18\x46\x61ilure_InvalidSignature\x10\x08\x12\x11\n\rFailure_Other\x10\t\x12\x1a\n\x16\x46\x61ilure_NotEnoughFunds\x10\n\x12\x1a\n\x16\x46\x61ilure_NotInitialized\x10\x0b\x12\x19\n\x15\x46\x61ilure_FirmwareError\x10\x63*\x87\x01\n\x10OutputScriptType\x12\x10\n\x0cPAYTOADDRESS\x10\x00\x12\x13\n\x0fPAYTOSCRIPTHASH\x10\x01\x12\x11\n\rPAYTOMULTISIG\x10\x02\x12\x11\n\rPAYTOOPRETURN\x10\x03\x12\x10\n\x0cPAYTOWITNESS\x10\x04\x12\x14\n\x10PAYTOP2SHWITNESS\x10\x05*l\n\x0fInputScriptType\x12\x10\n\x0cSPENDADDRESS\x10\x00\x12\x11\n\rSPENDMULTISIG\x10\x01\x12\x0c\n\x08\x45XTERNAL\x10\x02\x12\x10\n\x0cSPENDWITNESS\x10\x03\x12\x14\n\x10SPENDP2SHWITNESS\x10\x04*U\n\x0bRequestType\x12\x0b\n\x07TXINPUT\x10\x00\x12\x0c\n\x08TXOUTPUT\x10\x01\x12\n\n\x06TXMETA\x10\x02\x12\x0e\n\nTXFINISHED\x10\x03\x12\x0f\n\x0bTXEXTRADATA\x10\x04*F\n\x11OutputAddressType\x12\t\n\x05SPEND\x10\x00\x12\x0c\n\x08TRANSFER\x10\x01\x12\n\n\x06\x43HANGE\x10\x02\x12\x0c\n\x08\x45XCHANGE\x10\x03*\xec\x07\n\x11\x42uttonRequestType\x12\x17\n\x13\x42uttonRequest_Other\x10\x01\x12\"\n\x1e\x42uttonRequest_FeeOverThreshold\x10\x02\x12\x1f\n\x1b\x42uttonRequest_ConfirmOutput\x10\x03\x12\x1d\n\x19\x42uttonRequest_ResetDevice\x10\x04\x12\x1d\n\x19\x42uttonRequest_ConfirmWord\x10\x05\x12\x1c\n\x18\x42uttonRequest_WipeDevice\x10\x06\x12\x1d\n\x19\x42uttonRequest_ProtectCall\x10\x07\x12\x18\n\x14\x42uttonRequest_SignTx\x10\x08\x12\x1f\n\x1b\x42uttonRequest_FirmwareCheck\x10\t\x12\x19\n\x15\x42uttonRequest_Address\x10\n\x12\x1f\n\x1b\x42uttonRequest_FirmwareErase\x10\x0b\x12*\n&ButtonRequest_ConfirmTransferToAccount\x10\x0c\x12+\n\'ButtonRequest_ConfirmTransferToNodePath\x10\r\x12\x1d\n\x19\x42uttonRequest_ChangeLabel\x10\x0e\x12 \n\x1c\x42uttonRequest_ChangeLanguage\x10\x0f\x12\"\n\x1e\x42uttonRequest_EnablePassphrase\x10\x10\x12#\n\x1f\x42uttonRequest_DisablePassphrase\x10\x11\x12\'\n#ButtonRequest_EncryptAndSignMessage\x10\x12\x12 \n\x1c\x42uttonRequest_EncryptMessage\x10\x13\x12\"\n\x1e\x42uttonRequest_ImportPrivateKey\x10\x14\x12(\n$ButtonRequest_ImportRecoverySentence\x10\x15\x12\x1e\n\x1a\x42uttonRequest_SignIdentity\x10\x16\x12\x16\n\x12\x42uttonRequest_Ping\x10\x17\x12\x1b\n\x17\x42uttonRequest_RemovePin\x10\x18\x12\x1b\n\x17\x42uttonRequest_ChangePin\x10\x19\x12\x1b\n\x17\x42uttonRequest_CreatePin\x10\x1a\x12\x1c\n\x18\x42uttonRequest_GetEntropy\x10\x1b\x12\x1d\n\x19\x42uttonRequest_SignMessage\x10\x1c\x12\x1f\n\x1b\x42uttonRequest_ApplyPolicies\x10\x1d\x12\x1e\n\x1a\x42uttonRequest_SignExchange\x10\x1e*\x7f\n\x14PinMatrixRequestType\x12 \n\x1cPinMatrixRequestType_Current\x10\x01\x12!\n\x1dPinMatrixRequestType_NewFirst\x10\x02\x12\"\n\x1ePinMatrixRequestType_NewSecond\x10\x03:4\n\x07wire_in\x12!.google.protobuf.EnumValueOptions\x18\xd2\x86\x03 \x01(\x08:5\n\x08wire_out\x12!.google.protobuf.EnumValueOptions\x18\xd3\x86\x03 \x01(\x08::\n\rwire_debug_in\x12!.google.protobuf.EnumValueOptions\x18\xd4\x86\x03 \x01(\x08:;\n\x0ewire_debug_out\x12!.google.protobuf.EnumValueOptions\x18\xd5\x86\x03 \x01(\x08\x42)\n\x1a\x63om.keepkey.deviceprotocolB\x0bKeepKeyType')
   ,
   dependencies=[google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,exchange__pb2.DESCRIPTOR,])
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 _FAILURETYPE = _descriptor.EnumDescriptor(
   name='FailureType',
@@ -84,8 +83,8 @@ _FAILURETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1994,
-  serialized_end=2327,
+  serialized_start=2057,
+  serialized_end=2390,
 )
 _sym_db.RegisterEnumDescriptor(_FAILURETYPE)
 
@@ -123,8 +122,8 @@ _OUTPUTSCRIPTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2330,
-  serialized_end=2465,
+  serialized_start=2393,
+  serialized_end=2528,
 )
 _sym_db.RegisterEnumDescriptor(_OUTPUTSCRIPTTYPE)
 
@@ -158,8 +157,8 @@ _INPUTSCRIPTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2467,
-  serialized_end=2575,
+  serialized_start=2530,
+  serialized_end=2638,
 )
 _sym_db.RegisterEnumDescriptor(_INPUTSCRIPTTYPE)
 
@@ -193,8 +192,8 @@ _REQUESTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2577,
-  serialized_end=2662,
+  serialized_start=2640,
+  serialized_end=2725,
 )
 _sym_db.RegisterEnumDescriptor(_REQUESTTYPE)
 
@@ -224,8 +223,8 @@ _OUTPUTADDRESSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2664,
-  serialized_end=2734,
+  serialized_start=2727,
+  serialized_end=2797,
 )
 _sym_db.RegisterEnumDescriptor(_OUTPUTADDRESSTYPE)
 
@@ -359,8 +358,8 @@ _BUTTONREQUESTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2737,
-  serialized_end=3741,
+  serialized_start=2800,
+  serialized_end=3804,
 )
 _sym_db.RegisterEnumDescriptor(_BUTTONREQUESTTYPE)
 
@@ -386,8 +385,8 @@ _PINMATRIXREQUESTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=3743,
-  serialized_end=3870,
+  serialized_start=3806,
+  serialized_end=3933,
 )
 _sym_db.RegisterEnumDescriptor(_PINMATRIXREQUESTTYPE)
 
@@ -465,7 +464,7 @@ wire_in = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=False,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 WIRE_OUT_FIELD_NUMBER = 60003
 wire_out = _descriptor.FieldDescriptor(
   name='wire_out', full_name='wire_out', index=1,
@@ -473,7 +472,7 @@ wire_out = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=False,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 WIRE_DEBUG_IN_FIELD_NUMBER = 60004
 wire_debug_in = _descriptor.FieldDescriptor(
   name='wire_debug_in', full_name='wire_debug_in', index=2,
@@ -481,7 +480,7 @@ wire_debug_in = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=False,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 WIRE_DEBUG_OUT_FIELD_NUMBER = 60005
 wire_debug_out = _descriptor.FieldDescriptor(
   name='wire_debug_out', full_name='wire_debug_out', index=3,
@@ -489,7 +488,7 @@ wire_debug_out = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=False,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 
 
 _HDNODETYPE = _descriptor.Descriptor(
@@ -505,42 +504,42 @@ _HDNODETYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fingerprint', full_name='HDNodeType.fingerprint', index=1,
       number=2, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='child_num', full_name='HDNodeType.child_num', index=2,
       number=3, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='chain_code', full_name='HDNodeType.chain_code', index=3,
       number=4, type=12, cpp_type=9, label=2,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='private_key', full_name='HDNodeType.private_key', index=4,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='public_key', full_name='HDNodeType.public_key', index=5,
       number=6, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -571,14 +570,14 @@ _HDNODEPATHTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='address_n', full_name='HDNodePathType.address_n', index=1,
       number=2, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -609,70 +608,91 @@ _COINTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='coin_shortcut', full_name='CoinType.coin_shortcut', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='address_type', full_name='CoinType.address_type', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=True, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='maxfee_kb', full_name='CoinType.maxfee_kb', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='address_type_p2sh', full_name='CoinType.address_type_p2sh', index=4,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=True, default_value=5,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='address_type_p2wpkh', full_name='CoinType.address_type_p2wpkh', index=5,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=True, default_value=6,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='address_type_p2wsh', full_name='CoinType.address_type_p2wsh', index=6,
       number=7, type=13, cpp_type=3, label=1,
       has_default_value=True, default_value=10,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='signed_message_header', full_name='CoinType.signed_message_header', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bip44_account_path', full_name='CoinType.bip44_account_path', index=8,
       number=9, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='forkid', full_name='CoinType.forkid', index=9,
       number=12, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='decimals', full_name='CoinType.decimals', index=10,
+      number=13, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='contract_address', full_name='CoinType.contract_address', index=11,
+      number=14, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='gas_limit', full_name='CoinType.gas_limit', index=12,
+      number=15, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -686,7 +706,7 @@ _COINTYPE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=261,
-  serialized_end=526,
+  serialized_end=589,
 )
 
 
@@ -703,21 +723,21 @@ _MULTISIGREDEEMSCRIPTTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='signatures', full_name='MultisigRedeemScriptType.signatures', index=1,
       number=2, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='m', full_name='MultisigRedeemScriptType.m', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -730,8 +750,8 @@ _MULTISIGREDEEMSCRIPTTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=528,
-  serialized_end=619,
+  serialized_start=591,
+  serialized_end=682,
 )
 
 
@@ -748,56 +768,56 @@ _TXINPUTTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='prev_hash', full_name='TxInputType.prev_hash', index=1,
       number=2, type=12, cpp_type=9, label=2,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='prev_index', full_name='TxInputType.prev_index', index=2,
       number=3, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='script_sig', full_name='TxInputType.script_sig', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sequence', full_name='TxInputType.sequence', index=4,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=True, default_value=4294967295,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='script_type', full_name='TxInputType.script_type', index=5,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=True, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='multisig', full_name='TxInputType.multisig', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='amount', full_name='TxInputType.amount', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -810,8 +830,8 @@ _TXINPUTTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=622,
-  serialized_end=857,
+  serialized_start=685,
+  serialized_end=920,
 )
 
 
@@ -828,56 +848,56 @@ _TXOUTPUTTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='address_n', full_name='TxOutputType.address_n', index=1,
       number=2, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='amount', full_name='TxOutputType.amount', index=2,
       number=3, type=4, cpp_type=4, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='script_type', full_name='TxOutputType.script_type', index=3,
       number=4, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='multisig', full_name='TxOutputType.multisig', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='op_return_data', full_name='TxOutputType.op_return_data', index=5,
       number=6, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='address_type', full_name='TxOutputType.address_type', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange_type', full_name='TxOutputType.exchange_type', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -890,8 +910,8 @@ _TXOUTPUTTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=860,
-  serialized_end=1115,
+  serialized_start=923,
+  serialized_end=1178,
 )
 
 
@@ -908,14 +928,14 @@ _TXOUTPUTBINTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='script_pubkey', full_name='TxOutputBinType.script_pubkey', index=1,
       number=2, type=12, cpp_type=9, label=2,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -928,8 +948,8 @@ _TXOUTPUTBINTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1117,
-  serialized_end=1173,
+  serialized_start=1180,
+  serialized_end=1236,
 )
 
 
@@ -946,63 +966,63 @@ _TRANSACTIONTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='inputs', full_name='TransactionType.inputs', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bin_outputs', full_name='TransactionType.bin_outputs', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='outputs', full_name='TransactionType.outputs', index=3,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lock_time', full_name='TransactionType.lock_time', index=4,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='inputs_cnt', full_name='TransactionType.inputs_cnt', index=5,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='outputs_cnt', full_name='TransactionType.outputs_cnt', index=6,
       number=7, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='extra_data', full_name='TransactionType.extra_data', index=7,
       number=8, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='extra_data_len', full_name='TransactionType.extra_data_len', index=8,
       number=9, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1015,8 +1035,8 @@ _TRANSACTIONTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1176,
-  serialized_end=1415,
+  serialized_start=1239,
+  serialized_end=1478,
 )
 
 
@@ -1033,7 +1053,7 @@ _RAWTRANSACTIONTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1046,8 +1066,8 @@ _RAWTRANSACTIONTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1417,
-  serialized_end=1454,
+  serialized_start=1480,
+  serialized_end=1517,
 )
 
 
@@ -1064,28 +1084,28 @@ _TXREQUESTDETAILSTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tx_hash', full_name='TxRequestDetailsType.tx_hash', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='extra_data_len', full_name='TxRequestDetailsType.extra_data_len', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='extra_data_offset', full_name='TxRequestDetailsType.extra_data_offset', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1098,8 +1118,8 @@ _TXREQUESTDETAILSTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1456,
-  serialized_end=1569,
+  serialized_start=1519,
+  serialized_end=1632,
 )
 
 
@@ -1116,21 +1136,21 @@ _TXREQUESTSERIALIZEDTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='signature', full_name='TxRequestSerializedType.signature', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='serialized_tx', full_name='TxRequestSerializedType.serialized_tx', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1143,8 +1163,8 @@ _TXREQUESTSERIALIZEDTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1571,
-  serialized_end=1663,
+  serialized_start=1634,
+  serialized_end=1726,
 )
 
 
@@ -1161,42 +1181,42 @@ _IDENTITYTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user', full_name='IdentityType.user', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host', full_name='IdentityType.host', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='IdentityType.port', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='path', full_name='IdentityType.path', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='index', full_name='IdentityType.index', index=5,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=True, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1209,8 +1229,8 @@ _IDENTITYTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1665,
-  serialized_end=1768,
+  serialized_start=1728,
+  serialized_end=1831,
 )
 
 
@@ -1227,14 +1247,14 @@ _POLICYTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='enabled', full_name='PolicyType.enabled', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1247,8 +1267,8 @@ _POLICYTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1770,
-  serialized_end=1820,
+  serialized_start=1833,
+  serialized_end=1883,
 )
 
 
@@ -1265,28 +1285,28 @@ _EXCHANGETYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='withdrawal_coin_name', full_name='ExchangeType.withdrawal_coin_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("Bitcoin").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='withdrawal_address_n', full_name='ExchangeType.withdrawal_address_n', index=2,
       number=3, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='return_address_n', full_name='ExchangeType.return_address_n', index=3,
       number=4, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1299,8 +1319,8 @@ _EXCHANGETYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1823,
-  serialized_end=1991,
+  serialized_start=1886,
+  serialized_end=2054,
 )
 
 _HDNODEPATHTYPE.fields_by_name['node'].message_type = _HDNODETYPE
@@ -1340,6 +1360,7 @@ DESCRIPTOR.extensions_by_name['wire_in'] = wire_in
 DESCRIPTOR.extensions_by_name['wire_out'] = wire_out
 DESCRIPTOR.extensions_by_name['wire_debug_in'] = wire_debug_in
 DESCRIPTOR.extensions_by_name['wire_debug_out'] = wire_debug_out
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 HDNodeType = _reflection.GeneratedProtocolMessageType('HDNodeType', (_message.Message,), dict(
   DESCRIPTOR = _HDNODETYPE,

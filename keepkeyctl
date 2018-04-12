@@ -273,7 +273,7 @@ class Commands(object):
         return output
 
     def verify_message(self, args):
-        signature = base64.b64decode(args.signature)
+        signature = b'H8DCyGyATFkbRJ7Sk2GsDuUVViRyBSC1fmNxgH5b00b4H7+BwG8iMmRKK8DMSkQyqwLzlKFJf+jPGFr9GaLI5ew='
         return self.client.verify_message(args.coin, args.address, signature, args.message)
 
     def encrypt_keyvalue(self, args):
@@ -325,6 +325,34 @@ class Commands(object):
         fp.seek(0)
         return self.client.firmware_update(fp=fp)
 
+    def flash_hash(self, args):
+        if not args.address:
+            raise Exception("Must provide address for flash hashing")
+
+        if not args.length:
+            raise Exception("Must provide length for flash hashing")
+
+        if not args.nonce:
+            raise Exception("Must provide nonce")
+
+        nonce = binascii.unhexlify(args.nonce)
+
+        resp = self.client.flash_hash(args.address, args.length, args.nonce)
+        return binascii.hexlify(resp)
+
+    def flash_write(self, args):
+        if not args.address:
+            raise Exception("Must provide address for flash writing")
+
+        if not args.data:
+            raise Exception("Must provide data for flash writing")
+
+        data = binascii.unhexlify(args.data)
+
+        resp = self.client.flash_write(args.address, data)
+        return binascii.hexlify(resp)
+
+
     list.help = 'List connected KeepKey USB devices'
     ping.help = 'Send ping message'
     get_address.help = 'Get bitcoin address in base58 encoding'
@@ -347,6 +375,8 @@ class Commands(object):
     encrypt_keyvalue.help = 'Encrypt value by given key and path'
     decrypt_keyvalue.help = 'Decrypt value by given key and path'
     firmware_update.help = 'Upload new firmware to device (must be in bootloader mode)'
+    flash_hash.help = 'Ask the device to return a hash of flash memory'
+    flash_write.help = 'Ask the device to write a block of data to flash'
 
     get_address.arguments = (
         (('-c', '--coin'), {'type': str, 'default': 'Bitcoin'}),
@@ -462,6 +492,17 @@ class Commands(object):
     firmware_update.arguments = (
         (('-f', '--file'), {'type': str}),
         (('-u', '--url'), {'type': str}),
+    )
+
+    flash_hash.arguments = (
+        (('-a', '--address'), {'type': int, 'default': 0x08000000}),
+        (('-l', '--length'), {'type': int, 'default': 0x000FFFFF}),
+        (('-n', '--nonce'), {'type': str}),
+    )
+
+    flash_write.arguments = (
+        (('-a', '--address'), {'type': int, 'default': 0x08000000}),
+        (('-d', '--data'), {'type': str}),
     )
 
 def list_usb():

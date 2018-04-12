@@ -1,3 +1,4 @@
+# RUN: python %s
 # tx 4a7b7e0403ae5607e473949cfa03f09f2cd8b0f404bf99ce10b7303d86280bf7
 # 100 UTXO for spending for unittests
 

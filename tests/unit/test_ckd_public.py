@@ -1,3 +1,5 @@
+# RUN: python %s
+
 import unittest
 import keepkeylib.ckd_public as ckd_public
 

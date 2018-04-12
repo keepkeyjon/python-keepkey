@@ -1,3 +1,4 @@
+# RUN: python %s
 # This file is part of the TREZOR project.
 #
 # Copyright (C) 2012-2016 Marek Palatinus <slush@satoshilabs.com>

@@ -26,6 +26,8 @@ setup(
         'keepkeylib.tx_api',
         'keepkeylib.types_pb2',
         'keepkeylib.exchange_pb2',
+        'keepkeylib.flash_hash',
+        'keepkeylib.flash_binaries',
     ],
     scripts = ['keepkeyctl'],
     test_suite='tests/**/test_*.py',
