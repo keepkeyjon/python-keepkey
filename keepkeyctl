@@ -43,6 +43,7 @@ def parse_args(commands):
 #    parser.add_argument('-dp', '--debuglink-path', dest='debuglink_path', default='', help="Path used by the transport (usually serial port)")
     parser.add_argument('-j', '--json', dest='json', action='store_true', help="Prints result as json object")
 #    parser.add_argument('-d', '--debug', dest='debug', action='store_true', help='Enable low-level debugging')
+    parser.add_argument('--daemon', dest='daemon', action='store_true', help='Run as a flask daemon')
 
     cmdparser = parser.add_subparsers(title='Available commands')
     cmdparser.required = True
@@ -509,35 +510,38 @@ def list_usb():
     from keepkeylib.transport_hid import HidTransport
     return HidTransport.enumerate()
 
-def main():
-    args = parse_args(Commands)
 
-    if args.cmd == 'list':
-        devices = list_usb()
-        if args.json:
-            print(json.dumps(devices))
-        else:
-            for dev in devices:
-                if dev[1] != None:
-                    print("%s - debuglink enabled" % dev[0])
-                else:
-                    print(dev[0])
-        return
+from flask import Flask, render_template
+from flask_socketio import SocketIO
 
-    transport = get_transport(args.transport, args.path)
-    if args.verbose:
-        client = KeepKeyClientDebug(transport)
-    else:
-        client = KeepKeyClient(transport)
+flask_app = Flask(__name__)
+#flask_app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(flask_app)
 
-    cmds = Commands(client)
+transport = get_transport('usb', '')
+#client = KeepKeyClientDebug(transport)
+client = KeepKeyClient(transport)
 
-    res = args.func(cmds, args)
+@socketio.on('connect', namespace='/chat')
+def test_connect():
+    emit('my response', {'data': 'Connected'})
 
-    if args.json:
-        print(json.dumps(res, sort_keys=True, indent=4))
-    else:
-        print(res)
+@socketio.on('disconnect', namespace='/chat')
+def test_disconnect():
+    print('Client disconnected')
 
-if __name__ == '__main__':
-    main()
+@socketio.on('message')
+def handle_message(message):
+    print('received message: ' + str(message))
+    if message['command'] == 'ping':
+        client.init_device()
+        #print('result: ' + str(client.ping(message['msg'], False, False, False)))
+        print('result: ' + str(client.sign_message('Bitcoin', [], message['msg'])))
+
+
+@socketio.on('json')
+def handle_json(json):
+    print('received json: ' + str(json))
+
+if __name__=="__main__":
+    socketio.run(flask_app)
